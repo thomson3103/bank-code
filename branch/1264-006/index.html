@@ -82,8 +82,9 @@ footer a{color:rgba(255,255,255,.8)}
 @media(max-width:600px){
   .code-grid{flex-direction:column}
   .code-value{font-size:28px}
-  .kana-grid{gap:3px}
-  .kana-cell{font-size:15px;border-radius:6px}
+  .kana-grid{gap:4px;grid-template-columns:repeat(5,1fr)}
+  .kana-grid.cols5{grid-template-columns:repeat(5,1fr)}
+  .kana-cell{font-size:16px;border-radius:6px}
   h1{font-size:22px}
   .card{padding:20px 16px}
   .branch-table th,.branch-table td{padding:8px 10px;font-size:13px}

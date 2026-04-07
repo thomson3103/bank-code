@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="google-site-verification" content="gvj9Z-uz6yi5I-d5mZKiGdu2Ev0Ho7clqndLZRp7byI">
+<title>全銀システムとは？銀行間送金の仕組みをわかりやすく解説 | 金融機関コード検索ナビ</title>
+<meta name="description" content="全銀システム（全国銀行データ通信システム）の仕組みと、金融機関コードが振込処理でどのように使われるかを解説。モアタイムシステムによる24時間即時振込の経緯や障害事例にも触れます。">
+<link rel="canonical" href="https://bank-code.jp/article/zengin-system/">
+<meta property="og:title" content="全銀システムとは？銀行間送金の仕組みをわかりやすく解説 | 金融機関コード検索ナビ">
+<meta property="og:description" content="全銀システム（全国銀行データ通信システム）の仕組みと、金融機関コードが振込処理でどのように使われるかを解説。モアタイムシステムによる24時間即時振込の経緯や障害事例にも触れます。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://bank-code.jp/article/zengin-system/">
+<meta property="og:site_name" content="金融機関コード検索ナビ">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "トップ", "item": "https://bank-code.jp/"}, {"@type": "ListItem", "position": 2, "name": "お役立ち情報", "item": "https://bank-code.jp/article/"}, {"@type": "ListItem", "position": 3, "name": "全銀システムとは？銀行間送金の仕組みをわかりやすく解説"}]}</script>
+<style>html,body{overflow-x:hidden}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#fafafa;color:#1a2a3a;font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;line-height:1.7}
+a{color:#163d72;text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:960px;margin:0 auto;padding:16px 20px}
+header{background:#1e56a0;color:#fff;padding:10px 0;position:sticky;top:0;z-index:100;border-bottom:1px solid #163d72}
+header .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:15px;font-weight:600;color:#fff;display:flex;align-items:center;gap:6px}
+.logo:hover{text-decoration:none}
+.logo svg{width:20px;height:20px;fill:#fff}
+nav a{color:rgba(255,255,255,.85);margin-left:16px;font-size:13px}
+nav a:hover{color:#fff;text-decoration:none}
+.breadcrumb{font-size:13px;color:#6b7b8d;margin:16px 0;padding:0}
+.breadcrumb a{color:#6b7b8d}
+.breadcrumb a:hover{color:#163d72}
+.content-section{background:#fff;border-top:3px solid #1e56a0;padding:28px;margin-bottom:24px;border:1px solid #dce3ed;border-top:3px solid #1e56a0}
+h1{font-size:24px;font-weight:700;color:#1a2a3a;margin-bottom:16px}
+h2{font-size:18px;font-weight:700;color:#1a2a3a;margin:24px 0 12px;padding-bottom:8px;border-bottom:2px solid #dce3ed}
+.bank-label{font-size:14px;color:#6b7b8d;margin-bottom:4px}
+.code-grid{display:flex;gap:20px;flex-wrap:wrap;margin:20px 0}
+.code-box{flex:1;min-width:200px;background:#fff;border-radius:4px;padding:20px;text-align:center;border:1px solid #dce3ed}
+.code-label{font-size:13px;color:#6b7b8d;margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:6px}
+.code-value{font-size:36px;font-weight:800;color:#1e56a0;letter-spacing:4px;font-family:"SF Mono","Consolas","Courier New",monospace}
+.copy-btn{display:inline-flex;align-items:center;gap:4px;margin-top:10px;padding:6px 14px;border:1px solid #dce3ed;border-radius:4px;background:#fff;color:#1a2a3a;font-size:12px;cursor:pointer;transition:all .2s}
+.copy-btn:hover{background:#1e56a0;color:#fff;border-color:#1e56a0}
+.copy-btn.copied{background:#27ae60;color:#fff;border-color:#27ae60}
+.info-table{width:100%;border-collapse:collapse;margin:16px 0}
+.info-table th{text-align:left;padding:10px 14px;background:#f4f7fb;border:1px solid #dce3ed;font-size:13px;color:#6b7b8d;width:140px;white-space:nowrap}
+.info-table td{padding:10px 14px;border:1px solid #dce3ed;font-size:15px}
+.search-box{margin:16px 0}
+.search-box input{width:100%;padding:12px 16px;border:1px solid #dce3ed;border-radius:4px;font-size:15px;outline:none;transition:border .2s}
+.search-box input:focus{border-color:#163d72}
+.search-hint{font-size:12px;color:#6b7b8d;margin-top:4px}
+.filter-btns{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.filter-btn{padding:6px 16px;border:1px solid #dce3ed;border-radius:20px;background:#fff;font-size:13px;cursor:pointer;transition:all .2s}
+.filter-btn:hover,.filter-btn.active{background:#1e56a0;color:#fff;border-color:#1e56a0}
+.branch-table{width:100%;border-collapse:collapse}
+.branch-table th{background:#1e56a0;color:#fff;padding:10px 14px;font-size:13px;text-align:left;position:sticky;top:42px}
+.branch-table td{padding:10px 14px;border-bottom:1px solid #dce3ed;font-size:14px}
+.branch-table tr:hover td{background:#f4f7fb}
+.branch-table .code-cell{font-family:"SF Mono","Consolas",monospace;font-weight:600;color:#1e56a0}
+.detail-btn{display:inline-block;padding:5px 14px;background:#1e56a0;color:#fff;border-radius:4px;font-size:12px;transition:background .2s}
+.detail-btn:hover{background:#163d72;text-decoration:none}
+.kana-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:20px 0;max-width:320px}
+.kana-cell{display:flex;align-items:center;justify-content:center;aspect-ratio:1;border-radius:4px;font-size:18px;font-weight:600;background:#fff;border:1px solid #dce3ed;transition:all .2s;text-decoration:none;color:#1a2a3a}
+.kana-cell:hover{background:#1e56a0;color:#fff;border-color:#1e56a0;text-decoration:none;transform:scale(1.05)}
+.kana-cell.disabled{background:#f4f5f7;color:#c0c7d0;border-color:#e8eaed;cursor:default;pointer-events:none}
+.kana-cell.spacer{background:transparent;border-color:transparent;pointer-events:none}
+.section-title{font-size:18px;font-weight:700;color:#1a2a3a;padding:0 0 8px;margin:32px 0 16px;border-bottom:2px solid #1e56a0}
+.hero{padding:32px 0 24px;margin-bottom:24px;border-bottom:1px solid #dce3ed}
+.hero h1{color:#1a2a3a;font-size:22px;margin-bottom:6px;padding:0}
+.hero p{color:#6b7b8d;font-size:14px}
+.hero .search-box input{max-width:500px;display:block}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:20px 0}
+.stat-card{background:#fff;border-radius:4px;padding:16px;text-align:center;border:1px solid #dce3ed}
+.stat-num{font-size:28px;font-weight:800;color:#1e56a0;font-family:"SF Mono","Consolas",monospace}
+.stat-label{font-size:12px;color:#6b7b8d}
+footer{background:#f0f2f5;color:#6b7b8d;padding:20px 0;margin-top:40px;font-size:12px;border-top:1px solid #dce3ed}
+footer a{color:#6b7b8d}
+footer a:hover{color:#163d72}
+footer .footer-nav{margin-bottom:6px}
+footer .footer-nav a{margin:0 8px}
+footer .footer-update{margin-bottom:4px;font-size:11px}
+.seo-text{font-size:14px;line-height:1.8;color:#1a2a3a;margin:16px 0}
+.seo-text p{margin-bottom:12px}
+.source-box{background:#f4f7fb;border:1px solid #dce3ed;border-radius:4px;padding:14px 18px;margin:16px 0;font-size:13px;color:#6b7b8d}
+.source-box a{color:#163d72;text-decoration:underline}
+.source-box ul{margin:8px 0 0 20px;list-style:disc}
+.source-box li{margin:4px 0}
+.updated-date{font-size:12px;color:#6b7b8d;text-align:right;margin-top:12px;padding-top:8px;border-top:1px solid #dce3ed}
+@media(max-width:600px){
+  .container{padding:12px 16px}
+  .code-grid{flex-direction:column}
+  .code-value{font-size:28px}
+  .kana-grid{gap:4px}
+  .kana-cell{font-size:16px}
+  h1{font-size:20px}
+  .content-section{padding:20px 16px}
+  .branch-table th,.branch-table td{padding:8px 10px;font-size:13px}
+  .hero{padding:20px 0 16px}
+  .hero h1{font-size:20px}
+  .source-box{padding:10px 14px;font-size:12px}
+}</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N2KR756TCN"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N2KR756TCN');</script>
+</head>
+<body>
+<header>
+<div class="container">
+<a href="/" class="logo">
+<svg viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg>
+金融機関コード検索ナビ
+</a>
+<nav>
+<a href="/#kana">ひらがなで検索</a>
+<a href="/#code-search">コードから検索</a>
+<a href="/article/">お役立ち情報</a>
+</nav>
+</div>
+</header>
+<main>
+<div class="container">
+<nav class="breadcrumb" aria-label="パンくずリスト"><a href="/">トップ</a> &gt; <a href="/article/">お役立ち情報</a> &gt; <span>全銀システムとは？銀行間送金の仕組みをわかりやすく解説</span></nav>
+
+<div class="content-section">
+<h1>全銀システムとは？銀行間送金の仕組みをわかりやすく解説</h1>
+<div class="seo-text">
+<p>ATMやネットバンキングで振込ボタンを押したあと、お金はどのようにして相手の口座へ届くのでしょうか。その裏側で動いているのが「全銀システム」と呼ばれる銀行間送金の基盤です。この記事では、全銀システムの概要から金融機関コードの役割、24時間即時振込を実現したモアタイムシステムまで、送金の仕組みをわかりやすく整理します。</p>
+<h2>全銀システムの概要 — 日本の送金インフラを支える仕組み</h2>
+<p>全銀システムの正式名称は「全国銀行データ通信システム」です。一般社団法人全国銀行資金決済ネットワーク（全銀ネット）が運営し、全国銀行協会（全銀協）が制度面を管理しています。</p>
+<p>このシステムの役割は、異なる金融機関の間で行われる振込を電子的に中継・処理することです。たとえば、A銀行の口座からB信用金庫の口座に振り込む場合、A銀行とB信用金庫が直接やりとりするのではなく、全銀システムが間に入って送金指示をリレーします（出典：全銀ネット）。</p>
+<p>全銀システムには、都市銀行、地方銀行、信用金庫、信用組合、労働金庫、農協、漁協、ゆうちょ銀行など、国内のほぼすべての金融機関が加盟しています。その数は1,000を超えており、日本国内の振込のほとんどがこのシステムを経由して処理されています。処理件数は年間で数十億件規模にのぼり、日本の経済活動を文字通り下支えしているインフラです。</p>
+<h2>金融機関コードが振込処理で果たす役割</h2>
+<p>全銀システムで送金指示を正しくルーティングするために使われるのが、4桁の金融機関コードと3桁の支店コードです。</p>
+<p>振込の処理は、おおまかに以下の流れで進みます。</p>
+<ol style="margin:8px 0 8px 24px">
+<li>振込人がネットバンキング等で「相手の金融機関コード・支店コード・口座番号・金額」を入力</li>
+<li>仕向銀行（振込人の銀行）が全銀システムに送金電文を送信</li>
+<li>全銀システムが金融機関コードをもとに<strong>被仕向銀行（受取人の銀行）を特定</strong></li>
+<li>被仕向銀行が支店コード・口座番号をもとに受取人の口座を特定</li>
+<li>口座に入金処理が実行される</li>
+</ol>
+<p>ここで重要なのは、金融機関コードが「送金の宛先を特定する住所」のような役割を果たしている点です。もしコードが間違っていれば、まったく別の金融機関に送金指示が飛んでしまうか、エラーとして差し戻されます。</p>
+<p>日常的に振込をする際、利用者が金融機関コードを強く意識する場面は限られています。ネットバンキングでは銀行名を入力すれば自動的にコードが紐づくことが多いためです。しかし裏側では、すべての振込処理においてこの4桁のコードが使われており、コードなしには1円も送ることができません。</p>
+<p>当サイトでは、金融機関名から4桁のコードをすぐに調べられます。振込手続き中にコードがわからなくなったときにご活用ください。</p>
+<h2>モアタイムシステム — 24時間即時振込が実現するまで</h2>
+<p>全銀システムには長らく「平日の8時30分〜15時30分しか即時振込ができない」という制約がありました。この時間帯は「コアタイム」と呼ばれ、夜間や土日の振込は翌営業日扱いになるのが当たり前でした。</p>
+<p>この状況を大きく変えたのが、2018年10月に稼働を開始した<strong>モアタイムシステム</strong>です。モアタイムシステムはコアタイムの外側をカバーする仕組みで、参加金融機関の間では平日夜間・土日祝日でも即時に振込が着金するようになりました（出典：全銀ネット）。</p>
+<table class="info-table">
+<thead><tr><th>項目</th><th>コアタイム</th><th>モアタイム</th></tr></thead><tbody>
+<tr><td>稼働時間</td><td>平日 8:30〜15:30</td><td>コアタイム以外（夜間・土日祝）</td></tr>
+<tr><td>着金タイミング</td><td>即時</td><td>即時（参加金融機関同士の場合）</td></tr>
+<tr><td>参加状況</td><td>全加盟機関が利用</td><td>任意参加（主要行はほぼ参加済み）</td></tr>
+</tbody></table>
+<p>ただし注意点があります。モアタイムシステムへの参加は金融機関の任意であり、すべての金融機関が対応しているわけではありません。特に小規模な信用組合や農協の中には、執筆時点でもモアタイム未参加の機関があります。土日に即時着金を期待して振り込んだのに翌営業日まで反映されなかった、というケースはこの参加状況の違いが原因です。</p>
+<h2>全銀システムの障害 — インフラとしての重要性</h2>
+<p>全銀システムがどれほど重要かは、障害が発生したときに浮き彫りになります。</p>
+<p>2023年10月に発生した全銀システムの障害では、一部の金融機関で他行宛ての振込が処理できない状態が約2日間にわたって続きました。給与振込日と重なった企業では従業員への入金が遅れ、取引先への支払いに影響が出たケースも報じられました。</p>
+<p>この障害は、全銀システムのリレーコンピュータ（RC）の更改作業に起因するもので、金融機関コードの読み替えテーブルに不具合が生じたことが原因の一つとされています。つまり、金融機関コードを正しく処理できなくなったことで、送金指示が正常にルーティングされなくなったわけです。</p>
+<p>この事例は2つのことを示しています。1つは、全銀システムが止まると国全体の送金が滞るという影響の大きさ。もう1つは、金融機関コードという仕組みがシステムの根幹に組み込まれており、その処理に問題が起きるだけで大規模な障害につながるという事実です。</p>
+<h2>利用者として知っておきたいこと</h2>
+<p>全銀システムの仕組みを知ったうえで、振込を行う利用者として押さえておきたいポイントをまとめます。</p>
+<ul style="margin:8px 0 8px 24px">
+<li><strong>金融機関コードは送金の宛先を決定する重要な情報</strong>。名前の入力だけでなく、コードが正しいかどうかも確認する習慣をつける</li>
+<li><strong>モアタイム対応の有無で着金タイミングが変わる</strong>。急ぎの振込では、相手の金融機関がモアタイムに参加しているか事前に確認するとよい</li>
+<li><strong>合併・統廃合で金融機関コードは変わる</strong>。定期的に振込先のコードが最新かチェックすることが、エラー防止につながる</li>
+<li><strong>全銀システムの障害はまれだが影響が大きい</strong>。重要な支払いは余裕を持ったスケジュールで振り込むことが最善の備え</li>
+</ul>
+<p>当サイトでは全国の金融機関コード・支店コードを検索できます。振込処理の前にコードを確認する際にお役立てください。</p>
+<h2>まとめ</h2>
+<p>全銀システムは、日本国内のほぼすべての銀行間送金を仲介する決済インフラです。金融機関コードは、このシステムの中で送金先を特定するための共通IDとして機能しており、振込処理の根幹を支えています。2018年に稼働したモアタイムシステムにより24時間即時振込の環境が整いつつありますが、参加状況は金融機関ごとに異なるため、急ぎの送金では事前確認が大切です。普段は意識しない仕組みですが、私たちの振込は毎回この基盤の上で処理されています。</p>
+<p><!-- 最終更新日: 2026-04-06 --></p>
+</div>
+<div class="updated-date">最終更新: 2026年4月6日</div>
+</div>
+</div>
+</main>
+<footer>
+<div class="container">
+<div class="footer-nav"><a href="/about/">運営者情報</a><a href="/privacy/">プライバシーポリシー</a><a href="/contact/">お問い合わせ</a></div>
+<div class="footer-update">データ更新: 2026年4月6日</div>
+<div>&copy; 2026 金融機関コード検索ナビ</div>
+</div>
+</footer>
+</body>
+</html>

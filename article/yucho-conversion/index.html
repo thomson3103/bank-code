@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="google-site-verification" content="gvj9Z-uz6yi5I-d5mZKiGdu2Ev0Ho7clqndLZRp7byI">
+<title>ゆうちょ銀行の記号・番号から支店コード・口座番号を変換する方法 | 金融機関コード検索ナビ</title>
+<meta name="description" content="ゆうちょ銀行の記号（5桁）・番号（8桁）を、他行振込用の支店コード・口座番号に変換するルールを具体例つきで解説します。">
+<link rel="canonical" href="https://bank-code.jp/article/yucho-conversion/">
+<meta property="og:title" content="ゆうちょ銀行の記号・番号から支店コード・口座番号を変換する方法 | 金融機関コード検索ナビ">
+<meta property="og:description" content="ゆうちょ銀行の記号（5桁）・番号（8桁）を、他行振込用の支店コード・口座番号に変換するルールを具体例つきで解説します。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://bank-code.jp/article/yucho-conversion/">
+<meta property="og:site_name" content="金融機関コード検索ナビ">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "トップ", "item": "https://bank-code.jp/"}, {"@type": "ListItem", "position": 2, "name": "お役立ち情報", "item": "https://bank-code.jp/article/"}, {"@type": "ListItem", "position": 3, "name": "ゆうちょ銀行の記号・番号から支店コード・口座番号を変換する方法"}]}</script>
+<style>html,body{overflow-x:hidden}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#fafafa;color:#1a2a3a;font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;line-height:1.7}
+a{color:#163d72;text-decoration:none}
+a:hover{text-decoration:underline}
+.container{max-width:960px;margin:0 auto;padding:16px 20px}
+header{background:#1e56a0;color:#fff;padding:10px 0;position:sticky;top:0;z-index:100;border-bottom:1px solid #163d72}
+header .container{display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:15px;font-weight:600;color:#fff;display:flex;align-items:center;gap:6px}
+.logo:hover{text-decoration:none}
+.logo svg{width:20px;height:20px;fill:#fff}
+nav a{color:rgba(255,255,255,.85);margin-left:16px;font-size:13px}
+nav a:hover{color:#fff;text-decoration:none}
+.breadcrumb{font-size:13px;color:#6b7b8d;margin:16px 0;padding:0}
+.breadcrumb a{color:#6b7b8d}
+.breadcrumb a:hover{color:#163d72}
+.content-section{background:#fff;border-top:3px solid #1e56a0;padding:28px;margin-bottom:24px;border:1px solid #dce3ed;border-top:3px solid #1e56a0}
+h1{font-size:24px;font-weight:700;color:#1a2a3a;margin-bottom:16px}
+h2{font-size:18px;font-weight:700;color:#1a2a3a;margin:24px 0 12px;padding-bottom:8px;border-bottom:2px solid #dce3ed}
+.bank-label{font-size:14px;color:#6b7b8d;margin-bottom:4px}
+.code-grid{display:flex;gap:20px;flex-wrap:wrap;margin:20px 0}
+.code-box{flex:1;min-width:200px;background:#fff;border-radius:4px;padding:20px;text-align:center;border:1px solid #dce3ed}
+.code-label{font-size:13px;color:#6b7b8d;margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:6px}
+.code-value{font-size:36px;font-weight:800;color:#1e56a0;letter-spacing:4px;font-family:"SF Mono","Consolas","Courier New",monospace}
+.copy-btn{display:inline-flex;align-items:center;gap:4px;margin-top:10px;padding:6px 14px;border:1px solid #dce3ed;border-radius:4px;background:#fff;color:#1a2a3a;font-size:12px;cursor:pointer;transition:all .2s}
+.copy-btn:hover{background:#1e56a0;color:#fff;border-color:#1e56a0}
+.copy-btn.copied{background:#27ae60;color:#fff;border-color:#27ae60}
+.info-table{width:100%;border-collapse:collapse;margin:16px 0}
+.info-table th{text-align:left;padding:10px 14px;background:#f4f7fb;border:1px solid #dce3ed;font-size:13px;color:#6b7b8d;width:140px;white-space:nowrap}
+.info-table td{padding:10px 14px;border:1px solid #dce3ed;font-size:15px}
+.search-box{margin:16px 0}
+.search-box input{width:100%;padding:12px 16px;border:1px solid #dce3ed;border-radius:4px;font-size:15px;outline:none;transition:border .2s}
+.search-box input:focus{border-color:#163d72}
+.search-hint{font-size:12px;color:#6b7b8d;margin-top:4px}
+.filter-btns{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.filter-btn{padding:6px 16px;border:1px solid #dce3ed;border-radius:20px;background:#fff;font-size:13px;cursor:pointer;transition:all .2s}
+.filter-btn:hover,.filter-btn.active{background:#1e56a0;color:#fff;border-color:#1e56a0}
+.branch-table{width:100%;border-collapse:collapse}
+.branch-table th{background:#1e56a0;color:#fff;padding:10px 14px;font-size:13px;text-align:left;position:sticky;top:42px}
+.branch-table td{padding:10px 14px;border-bottom:1px solid #dce3ed;font-size:14px}
+.branch-table tr:hover td{background:#f4f7fb}
+.branch-table .code-cell{font-family:"SF Mono","Consolas",monospace;font-weight:600;color:#1e56a0}
+.detail-btn{display:inline-block;padding:5px 14px;background:#1e56a0;color:#fff;border-radius:4px;font-size:12px;transition:background .2s}
+.detail-btn:hover{background:#163d72;text-decoration:none}
+.kana-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:20px 0;max-width:320px}
+.kana-cell{display:flex;align-items:center;justify-content:center;aspect-ratio:1;border-radius:4px;font-size:18px;font-weight:600;background:#fff;border:1px solid #dce3ed;transition:all .2s;text-decoration:none;color:#1a2a3a}
+.kana-cell:hover{background:#1e56a0;color:#fff;border-color:#1e56a0;text-decoration:none;transform:scale(1.05)}
+.kana-cell.disabled{background:#f4f5f7;color:#c0c7d0;border-color:#e8eaed;cursor:default;pointer-events:none}
+.kana-cell.spacer{background:transparent;border-color:transparent;pointer-events:none}
+.section-title{font-size:18px;font-weight:700;color:#1a2a3a;padding:0 0 8px;margin:32px 0 16px;border-bottom:2px solid #1e56a0}
+.hero{padding:32px 0 24px;margin-bottom:24px;border-bottom:1px solid #dce3ed}
+.hero h1{color:#1a2a3a;font-size:22px;margin-bottom:6px;padding:0}
+.hero p{color:#6b7b8d;font-size:14px}
+.hero .search-box input{max-width:500px;display:block}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:20px 0}
+.stat-card{background:#fff;border-radius:4px;padding:16px;text-align:center;border:1px solid #dce3ed}
+.stat-num{font-size:28px;font-weight:800;color:#1e56a0;font-family:"SF Mono","Consolas",monospace}
+.stat-label{font-size:12px;color:#6b7b8d}
+footer{background:#f0f2f5;color:#6b7b8d;padding:20px 0;margin-top:40px;font-size:12px;border-top:1px solid #dce3ed}
+footer a{color:#6b7b8d}
+footer a:hover{color:#163d72}
+footer .footer-nav{margin-bottom:6px}
+footer .footer-nav a{margin:0 8px}
+footer .footer-update{margin-bottom:4px;font-size:11px}
+.seo-text{font-size:14px;line-height:1.8;color:#1a2a3a;margin:16px 0}
+.seo-text p{margin-bottom:12px}
+.source-box{background:#f4f7fb;border:1px solid #dce3ed;border-radius:4px;padding:14px 18px;margin:16px 0;font-size:13px;color:#6b7b8d}
+.source-box a{color:#163d72;text-decoration:underline}
+.source-box ul{margin:8px 0 0 20px;list-style:disc}
+.source-box li{margin:4px 0}
+.updated-date{font-size:12px;color:#6b7b8d;text-align:right;margin-top:12px;padding-top:8px;border-top:1px solid #dce3ed}
+@media(max-width:600px){
+  .container{padding:12px 16px}
+  .code-grid{flex-direction:column}
+  .code-value{font-size:28px}
+  .kana-grid{gap:4px}
+  .kana-cell{font-size:16px}
+  h1{font-size:20px}
+  .content-section{padding:20px 16px}
+  .branch-table th,.branch-table td{padding:8px 10px;font-size:13px}
+  .hero{padding:20px 0 16px}
+  .hero h1{font-size:20px}
+  .source-box{padding:10px 14px;font-size:12px}
+}</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-N2KR756TCN"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N2KR756TCN');</script>
+</head>
+<body>
+<header>
+<div class="container">
+<a href="/" class="logo">
+<svg viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg>
+金融機関コード検索ナビ
+</a>
+<nav>
+<a href="/#kana">ひらがなで検索</a>
+<a href="/#code-search">コードから検索</a>
+<a href="/article/">お役立ち情報</a>
+</nav>
+</div>
+</header>
+<main>
+<div class="container">
+<nav class="breadcrumb" aria-label="パンくずリスト"><a href="/">トップ</a> &gt; <a href="/article/">お役立ち情報</a> &gt; <span>ゆうちょ銀行の記号・番号から支店コード・口座番号を変換する方法</span></nav>
+
+<div class="content-section">
+<h1>ゆうちょ銀行の記号・番号から支店コード・口座番号を変換する方法</h1>
+<div class="seo-text">
+<p>ゆうちょ銀行の口座に他の銀行から振込したいのに、相手から教えてもらったのが「記号」と「番号」だけで困った、という経験はないでしょうか。ゆうちょ銀行は独自の口座体系を使っており、他行から振込するには「支店コード」と「口座番号」への変換が必要です。この記事では、変換のルールを具体例つきで解説します。</p>
+<h2>ゆうちょ銀行の口座体系が他行と違う理由</h2>
+<p>一般的な銀行の口座は「金融機関コード（4桁）＋支店コード（3桁）＋口座番号（7桁）」で特定します。ところがゆうちょ銀行では、口座を<strong>「記号（5桁）＋番号（最大8桁）」</strong>という独自の体系で管理しています。</p>
+<p>この独自体系は、前身である郵便貯金時代の仕組みを引き継いだものです。郵便局は全銀システム（全国銀行データ通信システム）に加盟していなかったため、銀行と同じコード体系を使う必要がありませんでした。2007年の民営化でゆうちょ銀行が誕生し全銀システムに接続した際、従来の記号・番号を維持しつつ、振込用に変換できる仕組みが整備されました。</p>
+<p>つまり、ゆうちょ銀行の口座には「記号・番号」と「支店コード・口座番号」の<strong>2つの表記方法</strong>が併存しています。ゆうちょ同士の送金なら記号・番号を使い、他行との振込では支店コード・口座番号を使う、という使い分けが必要です。</p>
+<h2>変換ルールの具体的な仕組み</h2>
+<h3>金融機関コードは「9900」固定</h3>
+<p>ゆうちょ銀行の金融機関コード（銀行コード）は<strong>「9900」</strong>です。これはすべてのゆうちょ口座に共通で、変換は不要です。<strong>当サイト（bank-code.jp）でも「ゆうちょ銀行」で検索するとコード9900が確認できます。</strong></p>
+<h3>通常貯金口座の変換（記号が「1」で始まる場合）</h3>
+<p>通常貯金の記号は「1xxxx」のように1で始まります。変換ルールは次のとおりです。</p>
+<p><strong>支店コードの変換:</strong> 記号5桁の<strong>2桁目と3桁目</strong>を取り出し、末尾に<strong>「8」</strong>を付けて3桁にします。</p>
+<p><strong>口座番号の変換:</strong> 番号の<strong>末尾1桁を除いた</strong>残りが口座番号になります。7桁に満たない場合は先頭をゼロ埋めします。</p>
+<h4>具体例1：通常貯金</h4>
+<table class="info-table">
+<thead><tr><th>項目</th><th>ゆうちょ表記</th><th>変換後</th></tr></thead><tbody>
+<tr><td>記号</td><td><strong>1</strong>40<strong>80</strong></td><td>-</td></tr>
+<tr><td>支店コード</td><td>記号の2〜3桁目「40」＋「8」</td><td><strong>408</strong></td></tr>
+<tr><td>番号</td><td>1234567<strong>1</strong></td><td>-</td></tr>
+<tr><td>口座番号</td><td>末尾1を除く</td><td><strong>1234567</strong></td></tr>
+<tr><td>口座種別</td><td>-</td><td><strong>普通預金</strong></td></tr>
+</tbody></table>
+<p>この場合、他行から振込する際の指定は「ゆうちょ銀行（9900）、支店コード408（四〇八支店）、普通預金、口座番号1234567」となります。</p>
+<h3>振替口座の変換（記号が「0」で始まる場合）</h3>
+<p>振替口座の記号は「0xxxx」のように0で始まります。主に法人や団体が利用する口座です。</p>
+<p><strong>支店コードの変換:</strong> 記号5桁の<strong>2桁目と3桁目</strong>を取り出し、末尾に<strong>「9」</strong>を付けて3桁にします（通常貯金の「8」とは異なるので注意）。</p>
+<p><strong>口座番号の変換:</strong> 番号がそのまま口座番号になります（末尾除去は不要）。7桁に満たない場合は先頭をゼロ埋めします。</p>
+<h4>具体例2：振替口座</h4>
+<table class="info-table">
+<thead><tr><th>項目</th><th>ゆうちょ表記</th><th>変換後</th></tr></thead><tbody>
+<tr><td>記号</td><td><strong>0</strong>21<strong>60</strong></td><td>-</td></tr>
+<tr><td>支店コード</td><td>記号の2〜3桁目「21」＋「9」</td><td><strong>219</strong></td></tr>
+<tr><td>番号</td><td>54321</td><td>-</td></tr>
+<tr><td>口座番号</td><td>そのまま（ゼロ埋め）</td><td><strong>0054321</strong></td></tr>
+<tr><td>口座種別</td><td>-</td><td><strong>当座預金</strong></td></tr>
+</tbody></table>
+<p>振替口座の場合は口座種別が「当座預金」になる点も他行振込時に指定が必要です。</p>
+<h2>変換ルールの早見表</h2>
+<table class="info-table">
+<thead><tr><th>記号の先頭</th><th>口座種類</th><th>支店コード末尾</th><th>番号の処理</th><th>口座種別</th></tr></thead><tbody>
+<tr><td>1</td><td>通常貯金</td><td><strong>8</strong></td><td>末尾1桁を除去</td><td>普通預金</td></tr>
+<tr><td>0</td><td>振替口座</td><td><strong>9</strong></td><td>そのまま使用</td><td>当座預金</td></tr>
+</tbody></table>
+<p>覚え方として、<strong>通常貯金は「8」、振替口座は「9」</strong>とセットで記憶しておくと混乱しにくくなります。ちなみに、この「8」と「9」は実際のゆうちょ銀行の支店名にも反映されています。支店コード末尾が8の支店は「〇〇八支店」、9の支店は「〇〇九支店」という漢数字の名前がつけられており、実在の店舗があるわけではなく振込専用の仮想支店です。</p>
+<h2>ゆうちょ公式の変換ツールも利用できます</h2>
+<p>ゆうちょ銀行の公式サイトには、記号・番号を入力すると振込用の支店コード・口座番号を自動表示してくれる変換ツールが用意されています。変換に不安がある場合は、公式ツールで結果を確認すると安心です（出典：ゆうちょ銀行公式サイト）。</p>
+<p>また、ゆうちょダイレクト（ゆうちょ銀行のネットバンキング）にログインすると、自分の口座の振込用口座番号が表示されるので、他の人に振込先を伝える際はそこから転記するのが確実です。</p>
+<h2>よくあるつまずきポイント</h2>
+<ul style="margin:8px 0 8px 24px">
+<li><strong>記号の4〜5桁目は使わない</strong>: 支店コードに使うのは2〜3桁目だけです。4〜5桁目は変換には関係ありません</li>
+<li><strong>通常貯金と振替口座で末尾の数字が違う</strong>: 通常貯金は「8」、振替口座は「9」です。ここを間違えると支店コード自体が変わるため、振込エラーになります</li>
+<li><strong>通常貯金の番号は末尾を除く</strong>: 番号の最後の1桁（チェックデジット）は口座番号には含めません。振替口座では番号をそのまま使うので、口座種類によって処理が異なる点に注意してください</li>
+<li><strong>口座種別の選択ミス</strong>: 通常貯金は「普通預金」、振替口座は「当座預金」を選択する必要があります</li>
+</ul>
+<h2>まとめ</h2>
+<p>ゆうちょ銀行の記号・番号から他行振込用の支店コード・口座番号への変換は、ルールさえ覚えれば難しくありません。通常貯金なら記号の2〜3桁目に「8」を足して支店コード、番号から末尾1桁を除いて口座番号です。不安な場合はゆうちょ公式の変換ツールで確認してください。なお、<strong>当サイトでゆうちょ銀行を検索すると、金融機関コード9900と各支店コードの一覧を確認できます。</strong></p>
+</div>
+<div class="updated-date">最終更新: 2026年4月6日</div>
+</div>
+</div>
+</main>
+<footer>
+<div class="container">
+<div class="footer-nav"><a href="/about/">運営者情報</a><a href="/privacy/">プライバシーポリシー</a><a href="/contact/">お問い合わせ</a></div>
+<div class="footer-update">データ更新: 2026年4月6日</div>
+<div>&copy; 2026 金融機関コード検索ナビ</div>
+</div>
+</footer>
+</body>
+</html>

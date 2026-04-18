@@ -13,262 +13,334 @@
 <meta property="og:url" content="https://bank-code.jp/">
 <meta property="og:site_name" content="金融機関コード検索ナビ">
 <meta name="twitter:card" content="summary">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "金融機関コード検索ナビ", "url": "https://bank-code.jp", "description": "全国1152の金融機関コード・28974支店の支店コードを検索", "potentialAction": {"@type": "SearchAction", "target": "https://bank-code.jp/search/?q={search_term_string}", "query-input": "required name=search_term_string"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "金融機関コード検索ナビ", "url": "https://bank-code.jp", "description": "全国1152の金融機関コード・28974支店の支店コードを検索", "potentialAction": {"@type": "SearchAction", "target": "https://bank-code.jp/bank/{search_term_string}/", "query-input": "required name=search_term_string"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "金融機関コード検索ナビ", "url": "https://bank-code.jp", "contactPoint": {"@type": "ContactPoint", "contactType": "customer service", "url": "https://bank-code.jp/contact/"}}</script>
-<style>html,body{overflow-x:hidden}
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#fafafa;color:#1a2a3a;font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;line-height:1.7}
-a{color:#163d72;text-decoration:none}
-a:hover{text-decoration:underline}
-.container{max-width:960px;margin:0 auto;padding:16px 20px}
-header{background:#1e56a0;color:#fff;padding:10px 0;position:sticky;top:0;z-index:100;border-bottom:1px solid #163d72}
-header .container{display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:15px;font-weight:600;color:#fff;display:flex;align-items:center;gap:6px}
-.logo:hover{text-decoration:none}
-.logo svg{width:20px;height:20px;fill:#fff}
-nav a{color:rgba(255,255,255,.85);margin-left:16px;font-size:13px}
-nav a:hover{color:#fff;text-decoration:none}
-.breadcrumb{font-size:13px;color:#6b7b8d;margin:16px 0;padding:0}
-.breadcrumb a{color:#6b7b8d}
-.breadcrumb a:hover{color:#163d72}
-.content-section{background:#fff;border-top:3px solid #1e56a0;padding:28px;margin-bottom:24px;border:1px solid #dce3ed;border-top:3px solid #1e56a0}
-h1{font-size:24px;font-weight:700;color:#1a2a3a;margin-bottom:16px}
-h2{font-size:18px;font-weight:700;color:#1a2a3a;margin:24px 0 12px;padding-bottom:8px;border-bottom:2px solid #dce3ed}
-.bank-label{font-size:14px;color:#6b7b8d;margin-bottom:4px}
-.code-grid{display:flex;gap:20px;flex-wrap:wrap;margin:20px 0}
-.code-box{flex:1;min-width:200px;background:#fff;border-radius:4px;padding:20px;text-align:center;border:1px solid #dce3ed}
-.code-label{font-size:13px;color:#6b7b8d;margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:6px}
-.code-value{font-size:36px;font-weight:800;color:#1e56a0;letter-spacing:4px;font-family:"SF Mono","Consolas","Courier New",monospace}
-.copy-btn{display:inline-flex;align-items:center;gap:4px;margin-top:10px;padding:6px 14px;border:1px solid #dce3ed;border-radius:4px;background:#fff;color:#1a2a3a;font-size:12px;cursor:pointer;transition:all .2s}
-.copy-btn:hover{background:#1e56a0;color:#fff;border-color:#1e56a0}
-.copy-btn.copied{background:#27ae60;color:#fff;border-color:#27ae60}
-.info-table{width:100%;border-collapse:collapse;margin:16px 0}
-.info-table th{text-align:left;padding:10px 14px;background:#f4f7fb;border:1px solid #dce3ed;font-size:13px;color:#6b7b8d;width:140px;white-space:nowrap}
-.info-table td{padding:10px 14px;border:1px solid #dce3ed;font-size:15px}
-.search-box{margin:16px 0}
-.search-box input{width:100%;padding:12px 16px;border:1px solid #dce3ed;border-radius:4px;font-size:15px;outline:none;transition:border .2s}
-.search-box input:focus{border-color:#163d72}
-.search-hint{font-size:12px;color:#6b7b8d;margin-top:4px}
-.filter-btns{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
-.filter-btn{padding:6px 16px;border:1px solid #dce3ed;border-radius:20px;background:#fff;font-size:13px;cursor:pointer;transition:all .2s}
-.filter-btn:hover,.filter-btn.active{background:#1e56a0;color:#fff;border-color:#1e56a0}
-.branch-table{width:100%;border-collapse:collapse}
-.branch-table th{background:#1e56a0;color:#fff;padding:10px 14px;font-size:13px;text-align:left;position:sticky;top:42px}
-.branch-table td{padding:10px 14px;border-bottom:1px solid #dce3ed;font-size:14px}
-.branch-table tr:hover td{background:#f4f7fb}
-.branch-table .code-cell{font-family:"SF Mono","Consolas",monospace;font-weight:600;color:#1e56a0}
-.detail-btn{display:inline-block;padding:5px 14px;background:#1e56a0;color:#fff;border-radius:4px;font-size:12px;transition:background .2s}
-.detail-btn:hover{background:#163d72;text-decoration:none}
-.kana-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:20px 0;max-width:320px}
-.kana-cell{display:flex;align-items:center;justify-content:center;aspect-ratio:1;border-radius:4px;font-size:18px;font-weight:600;background:#fff;border:1px solid #dce3ed;transition:all .2s;text-decoration:none;color:#1a2a3a}
-.kana-cell:hover{background:#1e56a0;color:#fff;border-color:#1e56a0;text-decoration:none;transform:scale(1.05)}
-.kana-cell.disabled{background:#f4f5f7;color:#c0c7d0;border-color:#e8eaed;cursor:default;pointer-events:none}
-.kana-cell.spacer{background:transparent;border-color:transparent;pointer-events:none}
-.section-title{font-size:18px;font-weight:700;color:#1a2a3a;padding:0 0 8px;margin:32px 0 16px;border-bottom:2px solid #1e56a0}
-.hero{padding:32px 0 24px;margin-bottom:24px;border-bottom:1px solid #dce3ed}
-.hero h1{color:#1a2a3a;font-size:22px;margin-bottom:6px;padding:0}
-.hero p{color:#6b7b8d;font-size:14px}
-.hero .search-box input{max-width:500px;display:block}
-.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:20px 0}
-.stat-card{background:#fff;border-radius:4px;padding:16px;text-align:center;border:1px solid #dce3ed}
-.stat-num{font-size:28px;font-weight:800;color:#1e56a0;font-family:"SF Mono","Consolas",monospace}
-.stat-label{font-size:12px;color:#6b7b8d}
-footer{background:#f0f2f5;color:#6b7b8d;padding:20px 0;margin-top:40px;font-size:12px;border-top:1px solid #dce3ed}
-footer a{color:#6b7b8d}
-footer a:hover{color:#163d72}
-footer .footer-nav{margin-bottom:6px}
-footer .footer-nav a{margin:0 8px}
-footer .footer-update{margin-bottom:4px;font-size:11px}
-.seo-text{font-size:14px;line-height:1.8;color:#1a2a3a;margin:16px 0}
-.seo-text p{margin-bottom:12px}
-.source-box{background:#f4f7fb;border:1px solid #dce3ed;border-radius:4px;padding:14px 18px;margin:16px 0;font-size:13px;color:#6b7b8d}
-.source-box a{color:#163d72;text-decoration:underline}
-.source-box ul{margin:8px 0 0 20px;list-style:disc}
-.source-box li{margin:4px 0}
-.updated-date{font-size:12px;color:#6b7b8d;text-align:right;margin-top:12px;padding-top:8px;border-top:1px solid #dce3ed}
-@media(max-width:600px){
-  .container{padding:12px 16px}
-  .code-grid{flex-direction:column}
-  .code-value{font-size:28px}
-  .kana-grid{gap:4px}
-  .kana-cell{font-size:16px}
-  h1{font-size:20px}
-  .content-section{padding:20px 16px}
-  .branch-table th,.branch-table td{padding:8px 10px;font-size:13px}
-  .hero{padding:20px 0 16px}
-  .hero h1{font-size:20px}
-  .source-box{padding:10px 14px;font-size:12px}
-}</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-N2KR756TCN"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-N2KR756TCN');</script>
 </head>
 <body>
-<header>
-<div class="container">
-<a href="/" class="logo">
-<svg viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg>
-金融機関コード検索ナビ
-</a>
-<nav>
-<a href="/#kana">ひらがなで検索</a>
-<a href="/#code-search">コードから検索</a>
-<a href="/article/">お役立ち情報</a>
-</nav>
-</div>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="/">
+      <span class="mark">銀</span>
+      <span class="brand-text">金融機関コード検索ナビ<small>BANK CODE NAVI</small></span>
+    </a>
+    <nav class="site-nav">
+      <a href="/#fav-section" class="nav-fav"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg> お気に入り</a>
+      <a href="/article/">使い方</a>
+      <a href="/about/">データ出典</a>
+    </nav>
+  </div>
 </header>
-<main>
-<div class="container">
+<main class="container">
 
 
-<div class="hero">
-<h1>金融機関コード・支店コード検索</h1>
-<p>全国1,152の金融機関・28,974支店のコードを検索</p>
-<div class="search-box">
-<input type="text" id="top-search" placeholder="金融機関名・支店名で検索（例：みずほ銀行）" aria-label="金融機関検索">
-</div>
-</div>
+  <section class="page-head" style="margin-top:20px">
+    <span class="eyebrow">銀行コード・支店コード データベース</span>
+    <h1>金融機関コード・支店コードを<br>すばやく検索してコピー</h1>
+    <p class="lede">全国 1,152 の金融機関と 28,974 支店のコードを収録。クリック1回でコピーできます。</p>
 
-<div id="kana">
-<div class="section-title">ひらがなで検索</div>
-<div class="content-section">
-<h3 style="font-size:14px;color:#6b7b8d;margin:0 0 8px">あ行〜な行</h3>
-<div class="kana-grid"><a href="/bank-a/" class="kana-cell">あ</a>
-<a href="/bank-ka/" class="kana-cell">か</a>
-<a href="/bank-sa/" class="kana-cell">さ</a>
-<a href="/bank-ta/" class="kana-cell">た</a>
-<a href="/bank-na/" class="kana-cell">な</a>
-<a href="/bank-i/" class="kana-cell">い</a>
-<a href="/bank-ki/" class="kana-cell">き</a>
-<a href="/bank-shi/" class="kana-cell">し</a>
-<a href="/bank-chi/" class="kana-cell">ち</a>
-<a href="/bank-ni/" class="kana-cell">に</a>
-<a href="/bank-u/" class="kana-cell">う</a>
-<a href="/bank-ku/" class="kana-cell">く</a>
-<a href="/bank-su/" class="kana-cell">す</a>
-<a href="/bank-tsu/" class="kana-cell">つ</a>
-<a href="/bank-nu/" class="kana-cell">ぬ</a>
-<a href="/bank-e/" class="kana-cell">え</a>
-<a href="/bank-ke/" class="kana-cell">け</a>
-<a href="/bank-se/" class="kana-cell">せ</a>
-<a href="/bank-te/" class="kana-cell">て</a>
-<a href="/bank-ne/" class="kana-cell">ね</a>
-<a href="/bank-o/" class="kana-cell">お</a>
-<a href="/bank-ko/" class="kana-cell">こ</a>
-<a href="/bank-so/" class="kana-cell">そ</a>
-<a href="/bank-to/" class="kana-cell">と</a>
-<a href="/bank-no/" class="kana-cell">の</a></div>
-<h3 style="font-size:14px;color:#6b7b8d;margin:16px 0 8px">は行〜わ行</h3>
-<div class="kana-grid"><a href="/bank-ha/" class="kana-cell">は</a>
-<a href="/bank-ma/" class="kana-cell">ま</a>
-<a href="/bank-ya/" class="kana-cell">や</a>
-<a href="/bank-ra/" class="kana-cell">ら</a>
-<a href="/bank-wa/" class="kana-cell">わ</a>
-<a href="/bank-hi/" class="kana-cell">ひ</a>
-<a href="/bank-mi/" class="kana-cell">み</a>
-<div class="kana-cell spacer"></div>
-<a href="/bank-ri/" class="kana-cell">り</a>
-<div class="kana-cell spacer"></div>
-<a href="/bank-fu/" class="kana-cell">ふ</a>
-<a href="/bank-mu/" class="kana-cell">む</a>
-<a href="/bank-yu/" class="kana-cell">ゆ</a>
-<a href="/bank-ru/" class="kana-cell">る</a>
-<span class="kana-cell disabled">を</span>
-<a href="/bank-he/" class="kana-cell">へ</a>
-<a href="/bank-me/" class="kana-cell">め</a>
-<div class="kana-cell spacer"></div>
-<a href="/bank-re/" class="kana-cell">れ</a>
-<div class="kana-cell spacer"></div>
-<a href="/bank-ho/" class="kana-cell">ほ</a>
-<a href="/bank-mo/" class="kana-cell">も</a>
-<a href="/bank-yo/" class="kana-cell">よ</a>
-<a href="/bank-ro/" class="kana-cell">ろ</a>
-<span class="kana-cell disabled">ん</span></div>
-<h3 style="font-size:14px;color:#6b7b8d;margin:16px 0 8px">濁音・半濁音</h3>
-<div class="kana-grid"><a href="/bank-ga/" class="kana-cell">が</a>
-<span class="kana-cell disabled">ざ</span>
-<a href="/bank-da/" class="kana-cell">だ</a>
-<a href="/bank-ba/" class="kana-cell">ば</a>
-<span class="kana-cell disabled">ぱ</span>
-<a href="/bank-gi/" class="kana-cell">ぎ</a>
-<a href="/bank-ji/" class="kana-cell">じ</a>
-<span class="kana-cell disabled">ぢ</span>
-<a href="/bank-bi/" class="kana-cell">び</a>
-<a href="/bank-pi/" class="kana-cell">ぴ</a>
-<a href="/bank-gu/" class="kana-cell">ぐ</a>
-<span class="kana-cell disabled">ず</span>
-<span class="kana-cell disabled">づ</span>
-<a href="/bank-bu/" class="kana-cell">ぶ</a>
-<span class="kana-cell disabled">ぷ</span>
-<span class="kana-cell disabled">げ</span>
-<a href="/bank-ze/" class="kana-cell">ぜ</a>
-<a href="/bank-de/" class="kana-cell">で</a>
-<a href="/bank-be/" class="kana-cell">べ</a>
-<a href="/bank-pe/" class="kana-cell">ぺ</a>
-<span class="kana-cell disabled">ご</span>
-<span class="kana-cell disabled">ぞ</span>
-<a href="/bank-do/" class="kana-cell">ど</a>
-<a href="/bank-bo/" class="kana-cell">ぼ</a>
-<span class="kana-cell disabled">ぽ</span></div>
-</div>
-</div>
+    <div style="margin-top:20px">
+      <div class="search-wrap">
+        <svg class="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+        <input type="search" id="top-search" data-search-focus placeholder="金融機関名・カナ・コードで検索（例：みずほ、ミツビシ、0001）">
+        <span class="kbd">/</span>
+      </div>
+      <p class="search-hint">「/」キーで検索欄にジャンプ。4桁の金融機関コードを入力すると詳細ページへ移動します。</p>
+    </div>
 
-<div id="code-search" class="content-section">
-<h2>コードから金融機関・支店を検索</h2>
-<p class="seo-text">金融機関コード（4桁）または支店コード（3桁）から検索できます。</p>
-<div class="search-box">
-<input type="text" id="code-input" placeholder="金融機関コード（4桁）を入力" maxlength="4" aria-label="コード検索">
-<div class="search-hint">※ 4桁入力すると自動で移動します</div>
-</div>
-</div>
+    <div style="margin-top:18px;display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+      <span style="font-size:12px;letter-spacing:.12em;color:var(--text-3);font-weight:700;text-transform:uppercase">4桁のコードから探す</span>
+      <label class="code-input" for="code-in">
+        <span class="digits" id="digits">
+          <span class="digit-slot" data-pos="0">_</span>
+          <span class="digit-slot" data-pos="1">_</span>
+          <span class="digit-slot" data-pos="2">_</span>
+          <span class="digit-slot" data-pos="3">_</span>
+        </span>
+      </label>
+      <input id="code-in" inputmode="numeric" maxlength="4" style="position:absolute;opacity:0;width:1px;height:1px" aria-label="金融機関コード4桁入力">
+      <button class="btn btn-primary" id="code-go">コードで検索</button>
+    </div>
 
-<div class="content-section">
-<h2>金融機関コードとは</h2>
-<div class="seo-text">
-<p>金融機関コードとは、全国銀行協会が金融機関ごとに割り当てた4桁の識別番号です。「銀行コード」「全銀協コード」とも呼ばれます。</p>
-<p>銀行振込やインターネットバンキングでの振込先指定、口座振替の申込みなど、さまざまな場面で必要になる情報です。</p>
-<p>支店コードは各金融機関の支店ごとに割り当てられた3桁の番号で、金融機関コードと合わせて使用することで、全国のどの支店かを一意に特定できます。</p>
-</div>
-</div>
+    <div class="stat-strip">
+      <div class="stat"><div class="num">1,152</div><div class="lab">金融機関</div></div>
+      <div class="stat"><div class="num">28,974</div><div class="lab">支店・出張所</div></div>
+      <div class="stat"><div class="num">47</div><div class="lab">都道府県</div></div>
+      <div class="stat"><div class="num">2026.04</div><div class="lab">最終更新</div></div>
+    </div>
+  </section>
 
-<div class="section-title">お役立ち情報</div>
-<div class="content-section">
-<div class="seo-text">
-<p>金融機関コードの調べ方、銀行の合併履歴、振込依頼書の書き方など、実務に役立つ解説記事を掲載しています。</p>
-</div>
-<p><a href="/article/" class="detail-btn" style="padding:10px 24px;font-size:14px">記事一覧を見る →</a></p>
-</div>
+  <section class="fav-card" id="fav-section">
+    <div class="fav-head">
+      <h3><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg> お気に入り登録したコード</h3>
+      <button class="clear" onclick="BCN.clearFavs()">すべて削除</button>
+    </div>
+    <div id="fav-list" class="fav-list"></div>
+  </section>
 
-<script>
-(function(){
-var input=document.getElementById("top-search");
-if(!input)return;
-input.addEventListener("keydown",function(e){
-if(e.key==="Enter"){
-var q=this.value.trim();
-if(q){window.location.href="/search/?q="+encodeURIComponent(q);}
-}
-});
-})();
-</script>
-<script>
-(function(){
-var inp=document.getElementById("code-input");
-if(!inp)return;
-inp.addEventListener("input",function(){
-var v=this.value.replace(/[^0-9]/g,"");
-this.value=v;
-if(v.length===4)window.location.href="/bank/"+v+"/";
-});
-})();
-</script>
-</div>
+  <section class="card" id="kana">
+    <div class="card-head">
+      <h2>50音から金融機関を探す</h2>
+      <span class="meta">行をクリックすると、その行から始まる金融機関の一覧が表示されます</span>
+    </div>
+    <div class="card-body">
+      <div class="kana-grid">
+      <a class="kana-cell" href="/bank-a/">あ<span class="count">88</span></a>
+      <a class="kana-cell" href="/bank-i/">い<span class="count">56</span></a>
+      <a class="kana-cell" href="/bank-u/">う<span class="count">15</span></a>
+      <a class="kana-cell" href="/bank-e/">え<span class="count">22</span></a>
+      <a class="kana-cell" href="/bank-o/">お<span class="count">61</span></a>
+      <a class="kana-cell" href="/bank-ka/">か<span class="count">55</span></a>
+      <a class="kana-cell" href="/bank-ki/">き<span class="count">63</span></a>
+      <a class="kana-cell" href="/bank-ku/">く<span class="count">25</span></a>
+      <a class="kana-cell" href="/bank-ke/">け<span class="count">6</span></a>
+      <a class="kana-cell" href="/bank-ko/">こ<span class="count">25</span></a>
+      <a class="kana-cell" href="/bank-sa/">さ<span class="count">48</span></a>
+      <a class="kana-cell" href="/bank-shi/">し<span class="count">66</span></a>
+      <a class="kana-cell" href="/bank-su/">す<span class="count">10</span></a>
+      <a class="kana-cell" href="/bank-se/">せ<span class="count">16</span></a>
+      <a class="kana-cell" href="/bank-so/">そ<span class="count">10</span></a>
+      <a class="kana-cell" href="/bank-ta/">た<span class="count">33</span></a>
+      <a class="kana-cell" href="/bank-chi/">ち<span class="count">32</span></a>
+      <a class="kana-cell" href="/bank-tsu/">つ<span class="count">17</span></a>
+      <a class="kana-cell" href="/bank-te/">て<span class="count">2</span></a>
+      <a class="kana-cell" href="/bank-to/">と<span class="count">77</span></a>
+      <a class="kana-cell" href="/bank-na/">な<span class="count">41</span></a>
+      <a class="kana-cell" href="/bank-ni/">に<span class="count">30</span></a>
+      <a class="kana-cell" href="/bank-nu/">ぬ<span class="count">1</span></a>
+      <a class="kana-cell" href="/bank-ne/">ね<span class="count">1</span></a>
+      <a class="kana-cell" href="/bank-no/">の<span class="count">10</span></a>
+      <a class="kana-cell" href="/bank-ha/">は<span class="count">27</span></a>
+      <a class="kana-cell" href="/bank-hi/">ひ<span class="count">51</span></a>
+      <a class="kana-cell" href="/bank-fu/">ふ<span class="count">40</span></a>
+      <a class="kana-cell" href="/bank-he/">へ<span class="count">1</span></a>
+      <a class="kana-cell" href="/bank-ho/">ほ<span class="count">20</span></a>
+      <a class="kana-cell" href="/bank-ma/">ま<span class="count">13</span></a>
+      <a class="kana-cell" href="/bank-mi/">み<span class="count">45</span></a>
+      <a class="kana-cell" href="/bank-mu/">む<span class="count">5</span></a>
+      <a class="kana-cell" href="/bank-me/">め<span class="count">5</span></a>
+      <a class="kana-cell" href="/bank-mo/">も<span class="count">6</span></a>
+      <a class="kana-cell" href="/bank-ya/">や<span class="count">23</span></a>
+      <span class="kana-cell spacer"></span>
+      <a class="kana-cell" href="/bank-yu/">ゆ<span class="count">11</span></a>
+      <span class="kana-cell spacer"></span>
+      <a class="kana-cell" href="/bank-yo/">よ<span class="count">10</span></a>
+      <a class="kana-cell" href="/bank-ra/">ら<span class="count">1</span></a>
+      <a class="kana-cell" href="/bank-ri/">り<span class="count">5</span></a>
+      <a class="kana-cell" href="/bank-ru/">る<span class="count">2</span></a>
+      <a class="kana-cell" href="/bank-re/">れ<span class="count">3</span></a>
+      <a class="kana-cell" href="/bank-ro/">ろ<span class="count">2</span></a>
+      <a class="kana-cell" href="/bank-wa/">わ<span class="count">5</span></a>
+      <span class="kana-cell spacer"></span>
+      <span class="kana-cell disabled">を</span>
+      <span class="kana-cell spacer"></span>
+      <span class="kana-cell disabled">ん</span>
+      </div>
+      <h3 style="font-size:12px;letter-spacing:.12em;color:var(--text-3);font-weight:700;text-transform:uppercase;margin:22px 0 10px">濁音・半濁音</h3>
+      <div class="kana-grid">
+      <a class="kana-cell" href="/bank-ga/">が<span class="count">2</span></a>
+      <a class="kana-cell" href="/bank-gi/">ぎ<span class="count">5</span></a>
+      <a class="kana-cell" href="/bank-gu/">ぐ<span class="count">7</span></a>
+      <span class="kana-cell disabled">げ</span>
+      <a class="kana-cell" href="/bank-go/">ご<span class="count">2</span></a>
+      <span class="kana-cell disabled">ざ</span>
+      <a class="kana-cell" href="/bank-ji/">じ<span class="count">10</span></a>
+      <span class="kana-cell disabled">ず</span>
+      <a class="kana-cell" href="/bank-ze/">ぜ<span class="count">2</span></a>
+      <span class="kana-cell disabled">ぞ</span>
+      <a class="kana-cell" href="/bank-da/">だ<span class="count">12</span></a>
+      <span class="kana-cell disabled">ぢ</span>
+      <span class="kana-cell disabled">づ</span>
+      <a class="kana-cell" href="/bank-de/">で<span class="count">1</span></a>
+      <a class="kana-cell" href="/bank-do/">ど<span class="count">5</span></a>
+      <a class="kana-cell" href="/bank-ba/">ば<span class="count">4</span></a>
+      <a class="kana-cell" href="/bank-bi/">び<span class="count">10</span></a>
+      <a class="kana-cell" href="/bank-bu/">ぶ<span class="count">2</span></a>
+      <a class="kana-cell" href="/bank-be/">べ<span class="count">1</span></a>
+      <a class="kana-cell" href="/bank-bo/">ぼ<span class="count">1</span></a>
+      <span class="kana-cell disabled">ぱ</span>
+      <a class="kana-cell" href="/bank-pi/">ぴ<span class="count">2</span></a>
+      <span class="kana-cell disabled">ぷ</span>
+      <a class="kana-cell" href="/bank-pe/">ぺ<span class="count">1</span></a>
+      <span class="kana-cell disabled">ぽ</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-head">
+      <h2>よく検索される銀行</h2>
+      <span class="meta">クリックすると詳細ページへ</span>
+    </div>
+    <ul class="bank-list">
+      <li class="list-header" role="row">
+        <span>コード</span><span>金融機関名</span><span>業態</span><span>支店数</span><span class="col-detail"></span>
+      </li>
+      <li>
+        <span class="code-chip" data-code="0001">0001</span>
+        <span class="name"><a href="/bank/0001/">みずほ銀行</a><span class="kana">ミズホ</span></span>
+        <span class="type-pill" data-type="銀行">銀行</span>
+        <span class="mono" style="color:var(--text-3);font-size:12.5px">494</span>
+        <a class="detail-btn" href="/bank/0001/">詳細</a>
+      </li>
+      <li>
+        <span class="code-chip" data-code="0005">0005</span>
+        <span class="name"><a href="/bank/0005/">三菱ＵＦＪ銀行</a><span class="kana">ミツビシユ－エフジエイ</span></span>
+        <span class="type-pill" data-type="銀行">銀行</span>
+        <span class="mono" style="color:var(--text-3);font-size:12.5px">717</span>
+        <a class="detail-btn" href="/bank/0005/">詳細</a>
+      </li>
+      <li>
+        <span class="code-chip" data-code="0009">0009</span>
+        <span class="name"><a href="/bank/0009/">三井住友銀行</a><span class="kana">ミツイスミトモ</span></span>
+        <span class="type-pill" data-type="銀行">銀行</span>
+        <span class="mono" style="color:var(--text-3);font-size:12.5px">564</span>
+        <a class="detail-btn" href="/bank/0009/">詳細</a>
+      </li>
+      <li>
+        <span class="code-chip" data-code="0010">0010</span>
+        <span class="name"><a href="/bank/0010/">りそな銀行</a><span class="kana">リソナ</span></span>
+        <span class="type-pill" data-type="銀行">銀行</span>
+        <span class="mono" style="color:var(--text-3);font-size:12.5px">319</span>
+        <a class="detail-btn" href="/bank/0010/">詳細</a>
+      </li>
+      <li>
+        <span class="code-chip" data-code="9900">9900</span>
+        <span class="name"><a href="/bank/9900/">ゆうちょ</a><span class="kana">ユウチヨ</span></span>
+        <span class="type-pill" data-type="その他">その他</span>
+        <span class="mono" style="color:var(--text-3);font-size:12.5px">94</span>
+        <a class="detail-btn" href="/bank/9900/">詳細</a>
+      </li>
+      <li>
+        <span class="code-chip" data-code="0036">0036</span>
+        <span class="name"><a href="/bank/0036/">楽天銀行</a><span class="kana">ラクテン</span></span>
+        <span class="type-pill" data-type="銀行">銀行</span>
+        <span class="mono" style="color:var(--text-3);font-size:12.5px">102</span>
+        <a class="detail-btn" href="/bank/0036/">詳細</a>
+      </li>
+      <li>
+        <span class="code-chip" data-code="0033">0033</span>
+        <span class="name"><a href="/bank/0033/">ＰａｙＰａｙ銀行</a><span class="kana">ペイペイ</span></span>
+        <span class="type-pill" data-type="銀行">銀行</span>
+        <span class="mono" style="color:var(--text-3);font-size:12.5px">62</span>
+        <a class="detail-btn" href="/bank/0033/">詳細</a>
+      </li>
+      <li>
+        <span class="code-chip" data-code="0034">0034</span>
+        <span class="name"><a href="/bank/0034/">セブン銀行</a><span class="kana">セブン</span></span>
+        <span class="type-pill" data-type="銀行">銀行</span>
+        <span class="mono" style="color:var(--text-3);font-size:12.5px">18</span>
+        <a class="detail-btn" href="/bank/0034/">詳細</a>
+      </li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <div class="card-head light"><h2>金融機関コードとは</h2></div>
+    <div class="card-body">
+      <div class="seo-text">
+        <p><strong>金融機関コード（統一金融機関コード）</strong>は、日本国内の銀行・信用金庫・信用組合などを識別する4桁の番号です。全銀システムにおける振込・口座引き落としなど、あらゆる金融取引の際に必要となります。</p>
+        <p><strong>支店コード</strong>は各金融機関内の支店・出張所を識別する3桁の番号で、金融機関コードと組み合わせて使用します。給与振込口座の登録、公共料金の引き落とし設定、請求書への口座情報記載時など、経理・総務業務で頻繁に必要になります。</p>
+        <p>当サイトでは、全国1,152の金融機関と28,974支店のコードを、<strong>ワンクリックでコピー</strong>できる形で提供しています。</p>
+      </div>
+      <div class="source-box">
+        <strong>データ出典：</strong> <a href="https://www.zenginkyo.or.jp/" target="_blank" rel="noopener">全国銀行協会</a>「統一金融機関コード」／<a href="https://github.com/zengin-code/zengin-code" target="_blank" rel="noopener">zengin-code</a>（MIT License）
+        <br>最終更新: 2026年4月19日
+      </div>
+    </div>
+  </section>
+
 </main>
-<footer>
-<div class="container">
-<div class="footer-nav"><a href="/about/">運営者情報</a><a href="/privacy/">プライバシーポリシー</a><a href="/contact/">お問い合わせ</a></div>
-<div class="footer-update">データ更新: 2026年4月6日</div>
-<div>&copy; 2026 金融機関コード検索ナビ</div>
-</div>
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-top">
+      <div class="foot-brand">金融機関コード検索ナビ<small>BANK CODE NAVI</small></div>
+      <nav>
+        <a href="/about/">運営者情報</a><a href="/privacy/">プライバシーポリシー</a><a href="/contact/">お問い合わせ</a><a href="/article/">お役立ち情報</a>
+      </nav>
+    </div>
+    <div class="foot-meta">
+      <span>© 2026 金融機関コード検索ナビ</span>
+      <span>データ出典：全国銀行協会ほか</span>
+    </div>
+  </div>
 </footer>
+<script src="/app.js"></script>
+<script>
+(function(){
+  // 4-digit code input
+  var input=document.getElementById('code-in');
+  var slots=document.querySelectorAll('#digits .digit-slot');
+  var go=document.getElementById('code-go');
+  var wrap=document.querySelector('.code-input');
+  function paint(v){
+    v=(v||'').replace(/[^0-9]/g,'').slice(0,4);
+    slots.forEach(function(s,i){
+      if(i<v.length){s.textContent=v[i];s.classList.add('filled');}
+      else{s.textContent='_';s.classList.remove('filled');}
+    });
+    return v;
+  }
+  if(wrap){wrap.addEventListener('click',function(){input.focus()});}
+  if(input){
+    input.addEventListener('input',function(){
+      var v=paint(this.value);this.value=v;
+      if(v.length===4){window.location.href='/bank/'+v+'/';}
+    });
+  }
+  if(go){
+    go.addEventListener('click',function(){
+      var v=paint(input.value);
+      if(v.length===4){window.location.href='/bank/'+v+'/';}
+      else{input.focus();}
+    });
+  }
+  // Main search: 4-digit auto-navigate on Enter
+  var ts=document.getElementById('top-search');
+  if(ts){
+    ts.addEventListener('keydown',function(e){
+      if(e.key==='Enter'){
+        var q=this.value.trim();
+        var d=q.replace(/[^0-9]/g,'');
+        if(d.length===4){window.location.href='/bank/'+d+'/';}
+      }
+    });
+  }
+  // Favorites render
+  function renderFavs(){
+    var list=document.getElementById('fav-list');
+    if(!list)return;
+    var favs=BCN.getFavs();
+    if(favs.length===0){
+      list.innerHTML='<div class="fav-empty">銀行・支店ページの ☆ ボタンからお気に入り登録できます。登録したコードはここに表示され、ワンクリックでコピーできます。</div>';
+      return;
+    }
+    list.innerHTML=favs.map(function(f){
+      var sub=f.sub?'<span class="sub">'+f.sub+'</span>':'';
+      var href=f.href||'#';
+      return '<div class="fav-item" data-code="'+f.code+'">'+
+        '<span class="fc">'+f.code+'</span>'+
+        '<span class="fn"><a href="'+href+'" style="color:inherit;text-decoration:none">'+f.name+sub+'</a></span>'+
+        '<button class="remove" title="削除" onclick="event.stopPropagation();BCN.removeFav(\''+f.code+'\')">×</button>'+
+        '</div>';
+    }).join('');
+    list.querySelectorAll('.fav-item').forEach(function(el){
+      el.addEventListener('click',function(e){
+        if(e.target.closest('a'))return;
+        if(e.target.closest('.remove'))return;
+        BCN.copy(el.dataset.code,el.dataset.code);
+      });
+    });
+  }
+  renderFavs();
+  window.addEventListener('bcn-favs',renderFavs);
+})();
+</script>
 </body>
 </html>
